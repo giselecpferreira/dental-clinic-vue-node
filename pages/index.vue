@@ -42,7 +42,6 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
 export default {
   layout: 'dental',
 
-
 methods: {
   loginEnter() {
     if(this.$refs.formLogin.validate() ){
