@@ -1,9 +1,9 @@
 <template>
-  <v-parallax dark src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
+  <v-parallax dark src="https://warnerwave.com/image/26919-full_blue-polygon-wallpapers-top-free-blue-polygon-backgrounds.jpg">
       <v-layout align-center justify-center>
     <v-flex xs12 sm12 md6 lg6>
-      <v-card class="elevation-12"> 
-        <v-card-title class="white grey--text">
+      <v-card light class="elevation-10 card-style"> 
+        <v-card-title class="card-title grey--text">
           LOGIN
           </v-card-title> 
           <v-layout align-center justify-center>
@@ -36,10 +36,16 @@
         <v-card-actions>
           <v-spacer />
           <v-btn
+          class="mt-12 elevation-2"
+            dark
+            large
+            min-width="25%"
+            rounded 
+            label="LOGIN"
             color="primary"
             nuxt
-            to="/inspire">
-            Continue
+            to="/register">
+            LOGIN
           </v-btn>
         </v-card-actions>
         </v-flex>
@@ -81,3 +87,13 @@ methods: {
 }
 }
 </script>
+
+<style>
+.card-style {
+border-radius: 10px;
+}
+
+.card-title {
+  background-color: #f0f0f5 !important
+}
+</style>
