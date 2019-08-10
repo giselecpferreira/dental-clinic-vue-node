@@ -1,38 +1,53 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-center">
-        <logo />
-       oooo
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          123123
+  <v-parallax dark src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
+      <v-layout align-center justify-center>
+    <v-flex xs12 sm12 md6 lg6>
+      <v-card class="elevation-12"> 
+        <v-card-title class="white grey--text">
+          LOGIN
           </v-card-title> 
-        <v-card-text>
-         456456
-        </v-card-text>
+          <v-layout align-center justify-center>
+          <v-flex md11 lg11 ml-3 mr-3>
+        <v-flex xs12 sm12 md10 lg11 ml-5 mr-5>
+            <v-text-field
+              :rules="[rules.required, rules.min]"
+              :type="show1 ? 'text' : 'cro'"
+              name="input-10-2"
+              label="CRO"
+              hint="Apenas números!z"
+              value=""
+              class="input-group--focused"
+              @click:append="show1 = !show1"
+            ></v-text-field>
+          </v-flex>
+        <v-flex xs12 sm12 md10 lg11 ml-5 mr-5>
+            <v-text-field
+              :append-icon="show2 ? 'visibility' : 'visibility_off'"
+              :rules="[rules.required, rules.min]"
+              :type="show2 ? 'text' : 'password'"
+              name="input-10-2"
+              label="Senha"
+              hint="At least 8 characters"
+              value=""
+              class="input-group--focused"
+              @click:append="show2 = !show2"
+            ></v-text-field>
+          </v-flex>
         <v-card-actions>
           <v-spacer />
           <v-btn
             color="primary"
             nuxt
-            to="/inspire"
-          >
+            to="/inspire">
             Continue
           </v-btn>
         </v-card-actions>
+        </v-flex>
+        </v-layout>
       </v-card>
     </v-flex>
   </v-layout>
+</v-parallax>
 </template>
 
 <script>
@@ -41,6 +56,19 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
   layout: 'dental',
+  data () {
+    return {
+      show1: true,
+      show2: true,
+      password: 'Password',
+      email:'Email',
+      rules: {
+        required: value => !!value || 'Required.',
+        min: v => v.length >= 8 || 'Min 8 characters',
+        emailMatch: () => ('The email and password you entered don\'t match'),
+      },
+    }
+  },
 
 methods: {
   loginEnter() {

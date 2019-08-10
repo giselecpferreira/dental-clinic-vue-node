@@ -30,6 +30,6 @@ export default {
 }
 
 .layout {
-    height: 80vh;
+    height: 55vh;
 }
 </style>
