@@ -1,1 +1,14 @@
-$font-size-root: 20px;
+$font-size-root: 25px;
+$body-font-family: 'Lato', sans-serif;
+$heading-font-family: $body-font-family;
+
+
+$theme: (
+  primary: #047f7f,
+  secondary: #373d48,
+  accent: #daf2f2,
+  error: #c82e2d,
+  warning: #f90,
+  success: #8ebe2f,
+  dark: #292b32
+);
