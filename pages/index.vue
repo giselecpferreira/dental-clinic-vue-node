@@ -49,20 +49,21 @@
                 ml-5
                 mr-5>
                 <v-text-field
-                  :append-icon="show2 ? 'visibility' : 'visibility_off'"
                   :rules="[rules.required, rules.min]"
                   :type="show2 ? 'text' : 'password'"
                   name="input-10-2"
                   label="Senha"
-                  hint="At least 8 characters"
+                  hint="Mínimo 8 caracteres"
                   value=""
                   class="input-group--focused"
-                  @click:append="show2 = !show2" />
+                  @click:append="show2 = !show2">
+                  </v-text-field>
+                  <a href="" class="link">Esqueceu a Senha</a>
               </v-flex>
               <v-card-actions>
                 <v-spacer />
                 <v-btn
-                  class="mt-12 elevation-2"
+                  class=" elevation-2"
                   dark
                   large
                   min-width="25%"
@@ -121,5 +122,9 @@ export default {
 
 .card-title {
   background-color: #f0f0f5 !important
+}
+.link {
+  text-decoration:none;
+  font-size: 12px !important;
 }
 </style>
